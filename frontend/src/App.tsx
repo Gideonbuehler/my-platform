@@ -1,6 +1,20 @@
 import './App.css'
 
+type ReportKind = 'bug' | 'feature’
+type Report = {
+id: string
+text: string
+kind: ReportKind
+}
+
 function App() {
+
+  const sampleReport: Report = {
+    id: '1',
+    text: 'Navigation link is broken',
+    kind: 'bug',
+    }
+
   return (
     <>
       <header className="site-header">
@@ -33,6 +47,11 @@ function App() {
             I'm a computer science student who enjoys building practical
             software, from clean user interfaces to the production systems
             behind them. I also have an interest in cybersecurity, particularly red teaming and penetration testing.</p>
+        </section>
+
+        <section className="report-board">
+          <h2>Bugs & Feature Requests</h2>
+          <p>{sampleReport.text} ({sampleReport.kind})</p>
         </section>
       </main>
     </>
